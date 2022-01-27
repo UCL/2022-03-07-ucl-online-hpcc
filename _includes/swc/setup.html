@@ -3,8 +3,29 @@
 {% include warning-curriculum.html %}
 {% endunless %}
 
+<h3>HPC account</h3>
+
+You must apply for access to Myriad in advance of the course via the web form at the following link:
+<a href="https://www.rc.ucl.ac.uk/docs/Account_Services/">Research Computing account services</a>
+
 {% include install_instructions/shell.html %}
+
+<h3>SSH</h3>
+
+SSH is a tool that allows us to connect to and use a remote computer as our own.
+Please follow the directions below to install an SSH client for your system.
+
+Windows: Install MobaXterm from <a href="http://mobaxterm.mobatek.net">http://mobaxterm.mobatek.net</a>.
+Get the Home edition (Installer edition).
+
+macOS: Although macOS comes with SSH pre-installed, you will need to install <a href="https://www.xquartz.org">XQuartz</a> to enable graphical support.
+Note that you must restart your computer to complete the installation.
+
+Linux: Linux users do not need to install anything, you will already have an SSH client.
+
 {% include install_instructions/editor.html %}
+
+
 
 {% if site.flavor == "r" %}
 {% include install_instructions/r.html %}
@@ -13,6 +34,9 @@
 {% elsif site.flavor == "FIXME" %}
 {% include install_instructions/r.html %}
 {% include install_instructions/python.html %}
+{% elsif site.flavor == "hpc" %}
+{% else %}
+{% include warning-flavor.html %}
 {% endif %}
 
 {% comment %}
